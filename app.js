@@ -13,6 +13,15 @@ client.get('leto', function(err, reply){
     console.log(reply);
 });
 
+client.exists('GeorgeWashington', function(err, reply) {
+    if (reply === 1) {
+        console.log('exists');
+    } else {
+        console.log('doesn\'t exist');
+    }
+});
+
+
 function getRedisData(callback){
 	callback({ someRedisData: 'fromRedisHere' });
 }
