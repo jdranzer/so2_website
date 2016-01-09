@@ -9,11 +9,11 @@ client.on('connect', function(){
 }
 );
 
-client.get('leto', function(err, reply){
+client.get('users:leto', function(err, reply){
     console.log(reply);
 });
 
-client.exists('GeorgeWashington', function(err, reply) {
+client.exists('users;GeorgeWashington', function(err, reply) {
     if (reply === 1) {
         console.log('exists');
     } else {
