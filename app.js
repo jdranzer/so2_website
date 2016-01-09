@@ -1,6 +1,18 @@
 var express = require('express');
 var app = express();
 
+var redis = require('redis');
+var client = redis.createClient(192.168.122.17,6379);
+
+client.on('connect', function(){
+    console.log('connected');
+}
+);
+
+client.get('leto', function(err, reply){
+    console.log(reply);
+});
+
 function getRedisData(callback){
 	callback({ someRedisData: 'fromRedisHere' });
 }
